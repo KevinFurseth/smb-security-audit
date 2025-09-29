@@ -1,0 +1,14 @@
+version: '3.9'
+services:
+  api:
+    build:
+      context: ./server
+      dockerfile: ../docker/Dockerfile.server
+    ports:
+      - "3001:3001"
+  web:
+    build:
+      context: ./client
+      dockerfile: ../docker/Dockerfile.client
+    ports:
+      - "5173:80"
